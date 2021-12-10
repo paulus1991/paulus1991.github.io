@@ -1,0 +1,451 @@
+<app-header> </app-header>
+<div class="row main">
+  <div class="col-sm-7">
+    <form [formGroup]="paymentData" (ngSubmit)="onSubmit()">
+      <h1 class="header-title">SHIPPING</h1>
+      <h4><strong>SHIPPING ADDRESS</strong></h4>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <input
+            formControlName="firstName"
+            type="text"
+            placeholder="First Name *"
+            class="form-control space"
+          />
+        </div>
+        <div class="col-sm-6">
+          <input
+            formControlName="lastName"
+            type="text"
+            placeholder="Last Name *"
+            class="form-control space"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <input
+            formControlName="street"
+            type="text"
+            placeholder="Street Address *"
+            class="form-control space"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <input
+            type="text"
+            placeholder="City *"
+            class="form-control space"
+            formControlName="city"
+          />
+        </div>
+        <div class="col-sm-6">
+          <input
+            formControlName="province"
+            type="text"
+            placeholder="Province *"
+            class="form-control space"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <input
+            formControlName="postalCode"
+            type="number"
+            placeholder="Postal Code*"
+            class="form-control space"
+          />
+        </div>
+      </div>
+
+      <div class="row shipping-method">
+        <h5 class="space"><strong>SHIPPING METHOD</strong></h5>
+        <p class="space">
+          Enter a shipping address to see accurate shipping options for your
+          order.
+        </p>
+      </div>
+
+      <div class="row payment space">
+        <div class="col-sm-6" (click)="onShowContact()">
+          <h4><strong>CONTACT INFORMATION</strong></h4>
+        </div>
+        <div class="col-sm-6 credit">
+          <span>Email and Phone</span>
+        </div>
+        <div *ngIf="showContact" class="contact-margins">
+          <div class="row">
+            <div class="row">
+              <div class="col-sm-6">
+                <input
+                  type="number"
+                  placeholder="Phone Number*"
+                  class="form-control space"
+                />
+              </div>
+              <div class="col-sm-6">
+                <input
+                  type="text"
+                  placeholder="Email*"
+                  class="form-control space"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <button
+          (click)="onChange()"
+          class="btn btn-dark continue"
+          [disabled]="!paymentData.valid"
+        >
+          CONTINUE TO PAYMENT
+        </button>
+      </div>
+      <div class="row payment">
+        <div class="col-sm-6">
+          <h4>
+            <strong>PAYMENT</strong>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-lock-fill svg-align"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"
+              />
+            </svg>
+          </h4>
+        </div>
+        <div class="col-sm-6 credit">
+          <span>Card Credit, Paypal</span>
+        </div>
+
+        <div *ngIf="show">
+          <div class="notForDesktop">
+            <form [formGroup]="cardDataMobile">
+              <div
+                *ngIf="
+                  cardDataMobile.controls.inputValuesMobile.errors &&
+                  cardDataMobile.controls.inputValuesMobile.touched
+                "
+                style="color: red"
+              >
+                Invalid format
+              </div>
+              <div class="row card-expiration">
+                <label>Card Number</label>
+                <input
+                  class="form-control"
+                  maxlength="16"
+                  formControlName="inputValuesMobile"
+                />
+              </div>
+              <div class="row card-expiration">
+                <p>CVT</p>
+                <input
+                  class="form-control"
+                  maxlength="3"
+                  formControlName="cvtValueMobile"
+                />
+              </div>
+              <div class="row card-expiration">
+                <p>Expiration Month</p>
+                <select class="form-control">
+                  <option>January</option>
+                  <option>February</option>
+                  <option>March</option>
+                  <option>April</option>
+                  <option>June</option>
+                  <option>July</option>
+                  <option>August</option>
+                  <option>September</option>
+                  <option>October</option>
+                  <option>November</option>
+                  <option>December</option>
+                </select>
+              </div>
+              <div class="row card-expiration">
+                <p>Expiration Year</p>
+                <select class="form-control">
+                  <option>2022</option>
+                  <option>2023</option>
+                  <option>2025</option>
+                  <option>2026</option>
+                  <option>2027</option>
+                  <option>2028</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="card-container mobile-only">
+            <div class="row">
+              <div class="col-sm-6">
+                <h4 class="payment-details">Payment Details</h4>
+              </div>
+              <div class="col-sm-6 visa-image">
+                <img
+                  src="../../../assets/images/visa.png"
+                  style="width: 110px"
+                  class="payment-visa"
+                />
+              </div>
+            </div>
+            <div class="row form-margins-card">
+              <h5 class="space form-margins-card">Card Number</h5>
+            </div>
+            <form class="form-margins-card" [formGroup]="cardData">
+              <ng-container>
+                <div class="row card-margins-numbers">
+                  <div class="col-sm-3 mobile-only">
+                    <input
+                      type="text"
+                      class="form-control"
+                      min="1"
+                      max="9999"
+                      pattern="\d{4}"
+                      maxlength="4"
+                      formControlName="inputValues"
+                    />
+                  </div>
+                  <div class="col-sm-3 mobile-only">
+                    <input
+                      type="text"
+                      class="form-control"
+                      min="1"
+                      max="9999"
+                      pattern="\d{4}"
+                      maxlength="4"
+                      formControlName="inputValues  "
+                    />
+                  </div>
+                  <div class="col-sm-3 mobile-only">
+                    <input
+                      type="text"
+                      class="form-control"
+                      min="1"
+                      max="9999"
+                      pattern="\d{4}"
+                      maxlength="4"
+                      formControlName="inputValues "
+                    />
+                  </div>
+                  <div class="col-sm-3 mobile-only">
+                    <input
+                      type="text"
+                      class="form-control"
+                      min="1"
+                      max="9999"
+                      pattern="\d{4}"
+                      maxlength="4"
+                      formControlName="inputValues  "
+                    />
+                  </div>
+                </div>
+                <div
+                  *ngIf="
+                    cardData.controls.inputValues.errors &&
+                    cardData.controls.inputValues.touched
+                  "
+                  style="color: red"
+                >
+                  Invalid format
+                </div>
+                <div class="row form-margins-card">
+                  <div class="col-sm-6">
+                    <h5 class="card-margins-numbers form-margins-card">
+                      Expiration
+                    </h5>
+                  </div>
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-3 cvt">CVT</div>
+                </div>
+                <div class="row form-margins-card">
+                  <div class="col-sm-3">
+                    <select class="form-control card-margins-numbers">
+                      <option>January</option>
+                      <option>February</option>
+                      <option>March</option>
+                      <option>April</option>
+                      <option>June</option>
+                      <option>July</option>
+                      <option>August</option>
+                      <option>September</option>
+                      <option>October</option>
+                      <option>November</option>
+                      <option>December</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-3">
+                    <select class="form-control card-margins-numbers">
+                      <option>2022</option>
+                      <option>2023</option>
+                      <option>2025</option>
+                      <option>2026</option>
+                      <option>2027</option>
+                      <option>2028</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-3 mobile-only">
+                    <input
+                      type="text"
+                      class="form-control"
+                      maxlength="3"
+                      formControlName="cvtValue"
+                    />
+                  </div>
+                </div>
+              </ng-container>
+            </form>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-sm-3 order-info">
+    <div class="row space">
+      <h3>ORDER SUMMARY</h3>
+    </div>
+    <div class="row notForDesktop-button">
+      <strong><p>Subtotal</p></strong>
+      <strong
+        ><p>{{ filteredJson[0].price }} lei</p></strong
+      >
+      <strong><p>Taxes</p></strong>
+      <strong><p>100 lei</p></strong>
+
+      <div class="row total-price-mobile">
+        <strong *ngIf="promoCode"><p style="color: red">Discount</p></strong>
+        <strong
+          ><p style="color: red" *ngIf="promoCode">
+            {{ filteredJson[0].price * 0.15 }} lei
+          </p></strong
+        >
+        <hr />
+        <strong>TOTAL</strong>
+        <div *ngIf="promoCode">
+          <strong
+            >{{
+              filteredJson[0].price - filteredJson[0].price * 0.15 + 100
+            }}
+            lei</strong
+          >
+        </div>
+        <strong *ngIf="!promoCode"
+          >{{ filteredJson[0].price + 100 }} lei</strong
+        >
+      </div>
+    </div>
+    <div class="row promo-row">
+      <input
+        (input)="onPromo($event)"
+        placeholder="APPLY A PROMO CODE OR DISCOUNT"
+        class="form-control boldy notForDesktop-button"
+      />
+    </div>
+
+    <div class="row mobile-only">
+      <div class="col-sm-10">
+        <strong><p>Subtotal</p></strong>
+        <strong><p>Taxes</p></strong>
+        <strong *ngIf="promoCode"><p style="color: red">Discount</p></strong>
+      </div>
+      <div class="col-sm-2">
+        <strong
+          ><p>{{ filteredJson[0].price }} lei</p></strong
+        >
+        <strong><p>100 lei</p></strong>
+        <strong
+          ><p style="color: red" *ngIf="promoCode">
+            {{ filteredJson[0].price * 0.15 }} lei
+          </p></strong
+        >
+      </div>
+      <hr />
+    </div>
+    <div class="row mobile-only">
+      <div class="col-sm-10"><strong>TOTAL</strong></div>
+      <div class="col-sm-2">
+        <div *ngIf="promoCode">
+          <strong
+            >{{
+              filteredJson[0].price - filteredJson[0].price * 0.15 + 100
+            }}
+            lei</strong
+          >
+        </div>
+        <strong *ngIf="!promoCode"
+          >{{ filteredJson[0].price + 100 }} lei</strong
+        >
+      </div>
+    </div>
+    <div class="row promo-row">
+      <div class="col-sm-12">
+        <input
+          (input)="onPromo($event)"
+          placeholder="APPLY A PROMO CODE OR DISCOUNT"
+          class="form-control boldy mobile-only"
+        />
+      </div>
+    </div>
+    <div class="row space">
+      <h4><strong>BOOK SUMMARY</strong></h4>
+    </div>
+    <div class="row space summary mobile-only">
+      <div class="col-5 summary-image">
+        <img src="{{ filteredJson[0].imageUrl }}" style="height: 150px" />
+      </div>
+      <div class="col-7 summary-text">
+        <h6>
+          <strong>{{ filteredJson[0].name }}</strong>
+        </h6>
+        <p>Booking time : 12 nigths</p>
+      </div>
+    </div>
+
+    <div class="row space summary notForDesktop-button">
+      <div class="col-8 summary-image">
+        <img src="{{ filteredJson[0].imageUrl }}" style="height: 150px" />
+      </div>
+      <div class="col-4 summary-text">
+        <h6>
+          <strong>{{ filteredJson[0].name }}</strong>
+        </h6>
+        <p>Booking time : 12 nigths</p>
+      </div>
+    </div>
+    <div class="row button-save">
+      <div class="col-sm-12">
+        <button
+          routerLink="/thank-you"
+          class="btn btn-dark submit-save mobile-only"
+          [disabled]="!cardData.valid"
+        >
+          Save your booking
+        </button>
+        <form [formGroup]="cardDataMobile">
+          <button
+            routerLink="/thank-you"
+            class="btn btn-dark submit-save notForDesktop-button"
+            [disabled]="!cardDataMobile.valid"
+          >
+            Save your booking
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer> </app-footer>

@@ -1,0 +1,165 @@
+.header {
+  background-image: linear-gradient(
+      to right,
+      rgba(8, 19, 92, 0.9),
+      rgba(8, 19, 92, 0.9)
+    ),
+    url("../../../assets/images/jobs.jpg") !important;
+  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-position: center center;
+  height: 1000px;
+  text-align: center;
+  color: white;
+  font-family: "Mulish", sans-serif;
+}
+.h1-search {
+  padding-top: 400px;
+  padding-bottom: 30px;
+}
+
+.submit-class {
+  text-align: start;
+}
+.widget {
+  width: 100%;
+  height: 200px;
+  background-color: #e41a2b;
+  color: white;
+  font-family: "Mulish", sans-serif;
+  text-align: center;
+}
+.about-jobs {
+  margin-top: 100px;
+  width: 100%;
+  height: 500px;
+  font-family: "Mulish", sans-serif;
+}
+.about-job-image {
+  border-radius: 30px;
+}
+.read-more {
+  background-color: #08135c;
+  width: 200px;
+}
+.jobs {
+  background-color: #08135c;
+  width: 100%;
+  height: 800px;
+  font-family: "Mulish", sans-serif;
+}
+.widget-icons {
+  height: 55px;
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+
+.box-borders-img {
+  width: 70px;
+  height: 70px;
+}
+.box-borders-img-margins {
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}
+.gradient-border {
+  border: 1px solid #a4a4a4;
+  width: 200px;
+  margin-right: 50px;
+  border-radius: 10px;
+  margin-top: 50px;
+  color: white;
+  padding: 30px;
+}
+.h1-jobs {
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.hovering-image:hover {
+  opacity: 0.5;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+    height: 500px;
+  }
+  .header img {
+    width: 100%;
+  }
+  .first-container {
+    width: 100%;
+  }
+  .h1-search {
+    padding-top: 30px;
+  }
+  .submit-class {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .space-mobile {
+    margin-bottom: 20px;
+  }
+  .about-jobs img {
+    width: 100%;
+  }
+  .jobs {
+    width: 100%;
+    height: auto;
+  }
+  .widget {
+    display: flex;
+    height: auto;
+  }
+  .hovering-image h4 {
+    font-size: 15px;
+  }
+  .widget-icons {
+    margin-top: 15px;
+  }
+  .second-container {
+    text-align: center;
+    width: 100%;
+  }
+  .read-more {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .about-job-image {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .about-jobs {
+    width: 100%;
+    height: auto;
+  }
+  .jobs {
+    width: 100%;
+    height: auto;
+  }
+  .gradient-border {
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 20px;
+    text-align: center;
+  }
+  .gradient-border h2 {
+    font-size: 25px;
+  }
+  .pointer-cursor {
+    margin-right: 0;
+    height: auto;
+  }
+  .last-item {
+    margin-bottom: 50px;
+  }
+}

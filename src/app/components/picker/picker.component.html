@@ -1,0 +1,73 @@
+<div class="main">
+  <form>
+    <label><strong>Your Destination</strong> </label>
+    <input
+      placeholder="Enter destination or hotel name"
+      class="form-control search"
+    />
+    <div class="row">
+      <div class="col-sm-12">
+        <label><strong>Check in & out</strong></label>
+        <input
+          type="text"
+          ngxDaterangepickerMd
+          [(ngModel)]="selected"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control search"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <label> <strong>Rooms</strong></label
+        ><ng-select
+          [ngModelOptions]="{ standalone: true }"
+          name="fieldName"
+          ngDefaultControl
+          [(ngModel)]="room"
+          [ngModelOptions]="{ standalone: true }"
+          placeholder="Select"
+          class="search"
+        >
+          <ng-option *ngFor="let room of rooms" [value]="room">
+            {{ room }}
+          </ng-option>
+        </ng-select>
+      </div>
+      <div class="col-sm-4">
+        <label><strong>Adults</strong></label
+        ><ng-select
+          name="fieldName"
+          ngDefaultControl
+          [(ngModel)]="adult"
+          [ngModelOptions]="{ standalone: true }"
+          class="search"
+        >
+          <ng-option *ngFor="let adult of adults" [value]="adult">
+            {{ adult }}
+          </ng-option>
+        </ng-select>
+      </div>
+      <div class="col-sm-4">
+        <label><strong>Children</strong></label
+        ><ng-select
+          [(ngModel)]="child"
+          [ngModelOptions]="{ standalone: true }"
+          class="search"
+        >
+          <ng-option *ngFor="let child of children" [value]="child">
+            {{ child }}
+          </ng-option>
+        </ng-select>
+      </div>
+    </div>
+    <button
+      routerLink="/listings-results"
+      class="btn btn-primary check"
+      type="submit"
+      (click)="onSubmit()"
+    >
+      Check availabilty
+    </button>
+  </form>
+</div>

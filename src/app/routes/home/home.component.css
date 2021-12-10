@@ -1,0 +1,233 @@
+.main {
+  background-image: url("../../../assets/images/home-beach-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 1000px;
+}
+.picker {
+  margin-top: 150px;
+}
+.picker,
+h1,
+label {
+  font-weight: 200;
+  font-family: "Mulish", sans-serif;
+}
+.welcome {
+  margin-top: 150px;
+  color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.slider {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 80px;
+  border-radius: 30px;
+}
+.centered {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  animation: name-of-animation 5s infinite;
+}
+p {
+  font-family: "Mulish", sans-serif;
+}
+
+.text {
+  margin-top: 100px;
+  margin-bottom: 150px;
+}
+
+.content {
+  margin-right: 30px;
+}
+.promo {
+  width: 100%;
+  height: 200px;
+  background-color: #0076ce;
+  color: white;
+  text-align: center;
+  display: block;
+}
+svg {
+  margin-top: 20px;
+  margin-right: 80px;
+}
+svg:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.svg-align {
+  display: flex;
+}
+.fade-in {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+.fade-in.appear {
+  opacity: 1;
+}
+.indent {
+  text-indent: 50px;
+  margin-top: 20px;
+}
+.card-height {
+  height: 508px;
+}
+p {
+  animation: article-load 400ms ease-in;
+}
+
+.promo h1 {
+  animation: name-of-animation 5s infinite;
+}
+.welcome h1 {
+  animation: vertical 7.5s linear infinite 0s;
+  -ms-animation: vertical 7.5s linear infinite 0s;
+  -webkit-animation: vertical 7.5s linear infinite 0s;
+  color: white;
+  position: absolute;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3px;
+  border-radius: 10px;
+}
+.welcome-message {
+  padding-top: 70px;
+  font-size: 25px;
+}
+.suggested-bookings {
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.cupon {
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  position: sticky;
+  margin-top: auto !important;
+
+  overflow: auto;
+}
+.svg-align {
+  display: inline-flex;
+}
+
+@keyframes article-load {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slidein {
+  from {
+    margin-left: 10%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+@keyframes name-of-animation {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes vertical {
+  0% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 0;
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  38% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  45% {
+    opacity: 0;
+    -webkit-transform: translateY(90px);
+    transform: translateY(90px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    width: 100% !important;
+    height: auto;
+  }
+  .family-image {
+    width: 100%;
+  }
+  .welcome h1 {
+    font-size: 30px;
+    text-align: center !important;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  .welcome-message {
+    font-size: 20px;
+    text-align: center;
+  }
+  .align-info {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+  .family-h1 {
+    text-align: center;
+  }
+  .promo-h1 {
+    font-size: 30px;
+  }
+  .promo svg {
+    width: 32px;
+    height: 32px;
+  }
+  svg {
+    margin-right: 0px;
+  }
+  .promo {
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .svg-align {
+    display: flex;
+  }
+}

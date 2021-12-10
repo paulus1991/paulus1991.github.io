@@ -1,0 +1,88 @@
+.header {
+  background-image: linear-gradient(
+      180deg,
+      rgba(150, 105, 97, 0.67) 0%,
+      rgba(2, 0, 76, 0.84) 100%
+    ),
+    url("../../../assets/images/carrers.png") !important;
+  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-position: center center;
+
+  height: 550px;
+  text-align: center;
+  color: white;
+  font-family: "Mulish", sans-serif;
+}
+h1 {
+  font-size: 70px;
+  padding-top: 100px;
+}
+.container {
+  margin-top: 100px;
+  font-family: "Mulish", sans-serif;
+}
+.space {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.space-about {
+  margin-bottom: 50px;
+}
+.main-card {
+  height: 480px;
+}
+.img-info {
+  height: 60px;
+}
+.space-second {
+  margin-top: 150px;
+}
+.space-betwen {
+  margin-bottom: 10px;
+}
+.card-text {
+  color: #8d8d8d;
+}
+.social-media {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .header {
+    height: 300px;
+  }
+  h1 {
+    padding-top: 50px;
+  }
+  .container {
+    width: 100%;
+  }
+  .main-row {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .space-margins {
+    margin-bottom: 30px;
+  }
+  .width-main-card {
+    width: 100% !important;
+  }
+  .space-about {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .social-media {
+    display: flex;
+  }
+  .align-center {
+    text-align: center;
+  }
+  .align-mobile {
+    height: auto;
+    padding-bottom: 15px;
+  }
+  .mobile-image-align {
+    text-align: center;
+  }
+}

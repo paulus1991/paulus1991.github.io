@@ -1,0 +1,99 @@
+.header {
+  background-image: linear-gradient(
+      180deg,
+      rgba(150, 105, 97, 0.67) 0%,
+      rgba(2, 0, 76, 0.84) 100%
+    ),
+    url("../../../assets/images/about-us.jpg") !important;
+  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-position: center center;
+
+  height: 550px;
+  text-align: center;
+  color: white;
+  font-family: "Mulish", sans-serif;
+}
+h1 {
+  font-size: 70px;
+  padding-top: 100px;
+}
+
+.content {
+  font-family: "Mulish", sans-serif;
+}
+.space {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.image {
+  width: 100%;
+  text-align: center;
+}
+.small-margins {
+  margin-bottom: 15px;
+}
+.show-more-button {
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+.show-more {
+  display: flex;
+}
+.pointer {
+  cursor: pointer;
+}
+.first-space {
+  margin-top: 80px;
+}
+.indent {
+  text-indent: 50px;
+}
+h1,
+p,
+li {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-top: 100px;
+  }
+  .image-space {
+    width: 100%;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .show-more {
+    display: flex;
+  }
+  .show-more button {
+    font-size: 15px;
+    width: 100%;
+    padding: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .show-more h3 {
+    font-size: 25px;
+  }
+  .show-more-button {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: end;
+  }
+}

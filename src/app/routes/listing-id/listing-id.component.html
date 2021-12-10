@@ -1,0 +1,457 @@
+<app-header></app-header>
+<div class="row">
+  <div class="col-sm-8">
+    <div
+      id="carouselExampleControls"
+      class="carousel slide main-carousel"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            class="d-block w-100"
+            src="{{ filterJson[0].imageUrl }}"
+            alt="First slide"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="d-block w-100"
+            src="{{ filterJson[0].multipleImages1 }}"
+            alt="Second slide"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="d-block w-100"
+            src="{{ filterJson[0].multipleImages2 }}"
+            alt="Third slide"
+          />
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev controls-arrow"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next controls-arrow"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="content">
+      <div class="row">
+        <div class="col-sm-9">
+          <div>
+            <h1>{{ filterJson[0].name }}</h1>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <h2 class="price">lei {{ filterJson[0].price }}</h2>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row margins">
+        <div class="col-sm-12 time-select">
+          <label><strong>Check in & out</strong></label>
+          <input
+            type="text"
+            ngxDaterangepickerMd
+            [(ngModel)]="selected"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control time-select"
+          />
+        </div>
+      </div>
+      <div class="row margins">
+        <div class="col-sm-6 time-select">
+          <label><strong>Adults</strong></label
+          ><ng-select
+            name="fieldName"
+            ngDefaultControl
+            [(ngModel)]="adult"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            <ng-option *ngFor="let adult of adults" [value]="adult">
+              {{ adult }}
+            </ng-option>
+          </ng-select>
+        </div>
+        <div class="col-sm-6">
+          <label><strong>Children</strong></label
+          ><ng-select
+            [(ngModel)]="child"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            <ng-option *ngFor="let child of children" [value]="child">
+              {{ child }}
+            </ng-option>
+          </ng-select>
+        </div>
+      </div>
+
+      <div class="row margins">
+        <div class="col-sm-12 time-select">
+          <button
+            routerLink="/payment/{{ finalBooking }}"
+            class="book btn btn-success"
+          >
+            Book
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container info">
+  <div class="row">
+    <h2 class="top">Top Amenities</h2>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-door-closed"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"
+            />
+            <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
+          </svg>
+        </div>
+        <div class="col-sm-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-person"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+            />
+          </svg>
+        </div>
+        <div class="col-sm-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-file-post"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M4 3.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-8z"
+            />
+            <path
+              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"
+            />
+          </svg>
+        </div>
+        <div class="col-sm-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-badge-wc"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10.348 7.643c0-1.112.488-1.754 1.318-1.754.682 0 1.139.47 1.187 1.108H14v-.11c-.053-1.187-1.024-2-2.342-2-1.604 0-2.518 1.05-2.518 2.751v.747c0 1.7.905 2.73 2.518 2.73 1.314 0 2.285-.792 2.342-1.939v-.114h-1.147c-.048.615-.497 1.05-1.187 1.05-.839 0-1.318-.62-1.318-1.727v-.742zM4.457 11l1.02-4.184h.045L6.542 11h1.006L9 5.001H7.818l-.82 4.355h-.056L5.97 5.001h-.94l-.972 4.355h-.053l-.827-4.355H2L3.452 11h1.005z"
+            />
+            <path
+              d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"
+            />
+          </svg>
+        </div>
+        <div class="col-sm-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-credit-card-2-back"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"
+            />
+            <path
+              d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"
+            />
+          </svg>
+        </div>
+        <div class="col-sm-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-file-ppt-fill"
+            viewBox="0 0 16 16"
+          >
+            <path d="M8.188 8.5H7V5h1.188a1.75 1.75 0 1 1 0 3.5z" />
+            <path
+              d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm3 4a1 1 0 0 0-1 1v6.5a.5.5 0 0 0 1 0v-2h1.188a2.75 2.75 0 0 0 0-5.5H7z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          Bedrooms
+          <p>
+            <strong>{{ filterJson[0].bedrooms }}</strong>
+          </p>
+        </div>
+        <div class="col-sm-2">
+          Guests
+          <p>
+            <strong>{{ filterJson[0].guests }}</strong>
+          </p>
+        </div>
+        <div class="col-sm-2">
+          Beds
+          <p>
+            <strong>{{ filterJson[0].beds }}</strong>
+          </p>
+        </div>
+        <div class="col-sm-2">
+          Bathrooms
+          <p>
+            <strong>{{ filterJson[0].bathrooms }}</strong>
+          </p>
+        </div>
+        <div class="col-sm-2">Card Payment</div>
+        <div class="col-sm-2">Parking</div>
+      </div>
+      <div class="row main-info">
+        <div class="col-sm-6">
+          <h2 class="space">{{ filterJson[0].name }}</h2>
+          <h4 class="space">{{ filterJson[0].subject }}</h4>
+          <h3 class="space">{{ filterJson[0].location }}</h3>
+          <p>{{ filterJson[0].content }}</p>
+          <p>Our Hotel was marked as {{ filterJson[0].stars }} stars</p>
+          <p>
+            The feedback based on the customers is
+            <strong> {{ filterJson[0].quality }} </strong>
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <app-maps></app-maps>
+        </div>
+        <div class="row space-amenities margin-top-checks">
+          <div class="col-sm-4">
+            <p><strong>Check in starts at 16:00</strong></p>
+
+            <img src="../../../assets/images/icons/check-in-desk.png" />
+          </div>
+          <div class="col-sm-4">
+            <p><strong>Check out starts at 11:00</strong></p>
+
+            <img src="../../../assets/images/icons/check-out.png" />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row space-amenities">
+        <h1>All Amenities</h1>
+        <div class="container-amenities">
+          <div class="row space-amenities">
+            <div class="col-sm-1">
+              <img
+                [src]="
+                  filterJson[0].imageKitchen != null
+                    ? filterJson[0].imageKitchen
+                    : filterJson[0].imageShower
+                "
+              />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{
+                filterJson[0].textKitchen == "Kitchen" ? "Kitchen" : "Shower"
+              }}
+            </div>
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imageBathroom }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textBathroom }}
+            </div>
+
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imageBed }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textBed }}
+            </div>
+          </div>
+          <div class="row space-amenities">
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imageGym }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textGym }}
+            </div>
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imageElevator }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textElevator }}
+            </div>
+
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imageHair }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textHair }}
+            </div>
+          </div>
+
+          <div class="row space-amenities">
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imageTowel }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textTowel }}
+            </div>
+
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imageWifi }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textWifi }}
+            </div>
+
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imagePool }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textPool }}
+            </div>
+          </div>
+          <div class="row space-amenities">
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imageParking }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textParking }}
+            </div>
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imageReservation }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textReservation }}
+            </div>
+            <div class="col-sm-1">
+              <img src="{{ filterJson[0].imageShampoo }}" />
+            </div>
+            <div class="col-sm-3 space-image-amenities">
+              {{ filterJson[0].textShampoo }}
+            </div>
+          </div>
+        </div>
+        <hr class="margin-top-checks" />
+        <div class="row margin-top-checks">
+          <div class="col-sm-4">
+            <div class="card card-body">
+              <h5 class="space-amenities"><strong>Disclaimer </strong></h5>
+              <p>
+                Please read this brief guide to the terms and conditions of
+                staying at Hotel <strong>{{ filterJson[0].name }}</strong> , and
+                the terms and conditions for the usage of this internet site.
+                Please allow up to 2 hours notice prior to your expected arrival
+                for online bookings to be processed.
+              </p>
+              <p>
+                In these General Terms of Business, the following words shall
+                mean:-
+              </p>
+            </div>
+
+            <p>
+              <button
+                class="btn btn-dark show-more"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                Show more
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <h5><strong>1. INTERPRETATION</strong></h5>
+                <p>
+                  1.1 In these General Terms of Business, the following words
+                  shall mean:-
+                </p>
+                <p>
+                  Hotel – Hotel <strong>{{ filterJson[0].name }}</strong>
+                </p>
+                <p>
+                  Client – the person, firm or company making a booking or
+                  staying at the Hotel;
+                </p>
+                <p>Company – means the Hotel Xanadu Limited;</p>
+                <h5><strong>2. APPLICATION OF TERMS</strong></h5>
+                <p>
+                  2.1 These terms apply to all bookings to the exclusion of all
+                  other terms and conditions except to the extent that specific
+                  terms apply for a particular booking and have been signed in
+                  writing by an Authorised Representative of the Company.
+                </p>
+                <p>
+                  2.2 Confirmation of a booking by the Client is deemed
+                  acceptance of these terms.
+                </p>
+                <p>
+                  2.3 The term Client and Guest shall be used interchangeably in
+                  the Terms of Business and reference to any one of them shall
+                  be deemed to include reference to the other.
+                </p>
+                <h5><strong>3. PRICES</strong></h5>
+                <p>3.1 All published prices include VAT at the current rate.</p>
+                <p>
+                  3.2 The Hotel reserves the right to alter prices for any
+                  reason up to the date of booking or up to 12 weeks prior to
+                  arrival, whichever is the later.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 card card-body rules-hours">
+            <h5 class="space-amenities"><strong>Our Rules</strong></h5>
+            <p>Quiet program is the following : 22.00 --> 05.00</p>
+            <p>Quiet program is the following : 14.00 --> 17.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

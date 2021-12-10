@@ -1,0 +1,141 @@
+.main {
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  margin-top: 20px;
+}
+.search-box {
+  width: 300px;
+  background-color: #febb02;
+  font-family: "Mulish", sans-serif;
+}
+form {
+  margin-right: 20px;
+  padding-bottom: 40px;
+}
+.selected {
+  margin-right: auto;
+  margin-left: auto;
+}
+.filter {
+  display: inline-flex;
+}
+.content {
+  display: inline-flex;
+  margin-top: 20px;
+}
+.listings {
+  margin-bottom: 75px;
+  border: 1px solid lightgrey;
+  margin-top: 20px;
+}
+.options {
+  width: 100%;
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.note {
+  background-color: #003580;
+  width: 45px;
+  color: white;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+
+img {
+  margin-top: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid black;
+  margin: 1em 0;
+  padding: 0;
+}
+.search-icon {
+  margin-left: 100%;
+}
+.point-style {
+  cursor: pointer;
+}
+.space {
+  margin-top: 40px;
+}
+.check {
+  margin-top: 10px;
+}
+.popular {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.margin-inupt {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.text-sort {
+  text-align: initial;
+}
+.filter-sort-h5 {
+  margin-bottom: 20px;
+}
+img {
+  transition: transform 1s, filter 0.5s ease-out;
+}
+img:hover {
+  transform: scale(1.1);
+}
+.search-input {
+  box-shadow: 0 10px 40px 0 #b0c1d9;
+}
+
+.options:hover,
+.options:focus,
+.options:active {
+  -webkit-animation-name: buzz-out-on-hover;
+  animation-name: buzz-out-on-hover;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+@media (max-width: 768px) {
+  .filters {
+    display: none;
+  }
+  .search-input svg {
+    display: none;
+  }
+  .main {
+    width: 100%;
+  }
+  form {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .search-box {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .results {
+    margin-bottom: 40px;
+  }
+  hr {
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,149 @@
+<app-header></app-header>
+<div class="color"></div>
+<div class="body">
+  <div class="alert alert-success messageError" *ngIf="registered">
+    <h5>You have been successfully registered in!</h5>
+  </div>
+  <div class="main">
+    <h1>Register</h1>
+    <p>Create your account. It's free and only takes a minute.</p>
+    <form [formGroup]="registrationData" (ngSubmit)="onSubmit()">
+      <div class="row sign space">
+        <div class="col-sm-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-envelope-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"
+            />
+          </svg>
+        </div>
+
+        <div class="col-sm-11">
+          <input
+            class="form-control"
+            placeholder="E-mail"
+            formControlName="email"
+          />
+        </div>
+      </div>
+      <div class="row sign space">
+        <div class="col-sm-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-person-circle"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+            />
+          </svg>
+        </div>
+        <div class="col-sm-11">
+          <input
+            class="form-control"
+            placeholder="Username"
+            formControlName="username"
+          />
+        </div>
+      </div>
+      <div class="row sign space">
+        <div class="col-sm-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-lock"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"
+            />
+          </svg>
+        </div>
+        <div class="col-sm-11">
+          <input
+            type="password"
+            placeholder="Password"
+            class="form-control"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <div class="row sign space">
+        <div class="col-sm-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-unlock"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2zM3 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H3z"
+            />
+          </svg>
+        </div>
+        <div class="col-sm-11">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Repeat Password"
+            formControlName="confirmPassword"
+          />
+        </div>
+      </div>
+      <div class="row sign space">
+        <div class="col-sm-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-telephone"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+            />
+          </svg>
+        </div>
+        <div class="col-sm-11">
+          <input
+            type="number"
+            placeholder="Phone Number"
+            class="form-control"
+            formControlName="phoneNumber"
+          />
+        </div>
+      </div>
+      <input type="checkbox" />
+      <label>I accept the Terms of Use & Privacy Policy</label>
+      <br />
+      <button
+        class="btn btn-success sign-up"
+        type="submit"
+        [disabled]="!registrationData.valid"
+      >
+        Sign Up
+      </button>
+    </form>
+  </div>
+  <h6 class="login">
+    Already have an account? <a routerLink="/login">Login here!</a>
+  </h6>
+</div>
+
+<app-footer></app-footer>

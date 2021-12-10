@@ -1,0 +1,38 @@
+<div class="row main">
+  <div class="col-sm-7 logo">
+    <img class="home" routerLink="" src="../../../assets/images/logo.png" />
+  </div>
+  <div class="controls col-sm-5 control-menu">
+    <div class="row">
+      <div class="col">
+        <div ngbDropdown placement="bottom-right" class="d-inline-block">
+          <button
+            class="btn btn-outline-dark"
+            id="dropdownBasic1"
+            ngbDropdownToggle
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="42"
+              fill="currentColor"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem routerLink="">Home</button>
+            <button ngbDropdownItem routerLink="/contact">Contact</button>
+            <button ngbDropdownItem routerLink="/login">Login</button>
+            <button ngbDropdownItem routerLink="/signin">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
