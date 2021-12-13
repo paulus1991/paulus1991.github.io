@@ -198,13 +198,16 @@ p {
     width: 100%;
   }
   .welcome {
-    width: auto;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
   }
   .welcome h1 {
-    font-size: 30px;
+    font-size: 23px;
     text-align: center !important;
-    margin-left: 15px;
-    margin-bottom: 15px;
+    margin-left: auto !important;
+    margin-right: auto !important;
     margin-top: 15px;
   }
   .welcome-message {
