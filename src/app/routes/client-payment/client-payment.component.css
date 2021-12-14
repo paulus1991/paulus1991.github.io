@@ -195,17 +195,18 @@ h5 {
     background-color: black;
     color: white;
   }
+
   .summary {
-    width: 100%;
+    width: inherit;
     margin-right: 0px;
     margin-left: 0px;
   }
-  .summary-image img {
-    width: 100%;
+  .mobile-only img {
+    width: inherit;
   }
 
   .summary-text {
-    width: 50px;
+    width: auto;
   }
   .button-save {
     margin-left: auto;
