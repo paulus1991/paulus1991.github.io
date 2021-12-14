@@ -1,12 +1,42 @@
-.main {
-  background-color: lightcyan;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.navMenu {
   width: 100%;
-  height: 100px;
+  position: absolute;
+  top: 25%;
+  text-align: center;
+}
+
+.navMenu a {
+  color: #f6f4e6;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+  color: #fddb3a;
+  font-size: 22px;
+}
+.main {
+  background-color: #272727;
+  width: 100%;
+  height: 60px;
   margin-left: 0px;
 }
 .control-menu {
   text-align: end;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 a {
   cursor: pointer;
@@ -17,7 +47,9 @@ a:hover {
 }
 .logo,
 img {
-  height: 80px;
+  height: 53px;
+  padding-left: 30px;
+  margin-top: 1px;
 }
 a {
   font-weight: 200;
@@ -42,6 +74,14 @@ a:active {
 }
 button {
   font-size: 20px;
+  animation: nav-load 2s;
+}
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  display: flex;
+  color: white;
 }
 
 @keyframes nav-load {
@@ -57,7 +97,7 @@ button {
     width: 100%;
   }
   button {
-    font-size: 25px;
+    font-size: 20px;
   }
   .dropdown-toggle::after {
     display: none;
@@ -69,5 +109,22 @@ button {
   .logo {
     margin-top: 10px;
     margin-left: -10px;
+  }
+  .logo img {
+    padding: 0px;
+  }
+  .mobile-only {
+    display: block;
+    font-family: "Mulish", sans-serif;
+  }
+  .mobile-only button {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  .logo img {
+    margin-top: -8px;
+  }
+  .desktop-only {
+    display: none;
   }
 }

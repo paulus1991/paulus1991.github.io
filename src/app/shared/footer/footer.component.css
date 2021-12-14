@@ -29,6 +29,10 @@ p {
 }
 svg {
   margin-right: 20px;
+  margin-bottom: 15px;
+}
+svg:hover {
+  opacity: 0.5;
 }
 .link-decoration {
   cursor: pointer;

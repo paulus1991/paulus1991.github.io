@@ -2,19 +2,33 @@
   <div class="col-sm-7 logo">
     <img class="home" routerLink="" src="../../../assets/images/logo.png" />
   </div>
-  <div class="controls col-sm-5 control-menu">
+  <div class="col-sm-5 desktop-only">
+    <nav class="navMenu">
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2"><a routerLink="">Home</a></div>
+        <div class="col-sm-2">
+          <a routerLink="/contact">Contact</a>
+        </div>
+        <div class="col-sm-2"><a routerLink="/login">Login</a></div>
+        <div class="col-sm-2"><a routerLink="/signin">Register</a></div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="controls col-sm-5 control-menu mobile-only">
     <div class="row">
       <div class="col">
         <div ngbDropdown placement="bottom-right" class="d-inline-block">
           <button
-            class="btn btn-outline-dark"
+            class="btn btn-outline-warning menu-button"
             id="dropdownBasic1"
             ngbDropdownToggle
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="42"
-              height="42"
+              width="32"
+              height="32"
               fill="currentColor"
               class="bi bi-list"
               viewBox="0 0 16 16"
